@@ -1,0 +1,37 @@
+#!/usr/bin/env php
+<?php
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+use ITEA\App\Person;
+use ITEA\App\Serialized\Serialized;
+use ITEA\App\Encoder\JsonEncoder;
+use ITEA\App\Encoder\YamlEncoder;
+
+$person = new Person('Marina', 'Bulick');
+$person->setAge(30);
+
+
+$serialized = new Serialized($person, new YamlEncoder());
+$serialized->serialize();
+//"{"firstName":"Marina","lastName":"Bulick","age":30}"
+
+
+
+$serialized = new Serialized($person, new JsonEncoder());
+$serialized->serialize();
+/*"---
+firstName: Marina
+lastName: Bulick
+age: 30
+...
+"
+ */
+
+
+
+
+
+
+
+
