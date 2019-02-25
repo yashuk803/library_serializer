@@ -1,18 +1,16 @@
 <?php
-namespace ITEA\App\Metadata;
+namespace ITEA\Serializer\App\Metadata;
 
 class Metadata
 {
     /**
      * @var object
      */
-
     private $name;
 
     /**
      * @var \ReflectionClass
      */
-
     private $reflClass;
 
     /**
@@ -28,11 +26,11 @@ class Metadata
     /**
      * @return  array
      */
-    public function getSerealizeObject()
+    public function getData()
     {
 
         $props = $this->reflClass->getProperties();
-        $propsArr = array();
+        $propsArr = [];
         foreach($props as $prop){
 
             $reflProp = $this->getMetadataProperty($prop->getName());
@@ -41,6 +39,7 @@ class Metadata
         }
         return $propsArr;
     }
+
     /**
      * @return  string
      */

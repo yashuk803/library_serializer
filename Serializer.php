@@ -1,11 +1,11 @@
 <?php
 
-namespace ITEA\App\Serialized;
+namespace ITEA\Serializer;
 
-use ITEA\App\Encoder\EncoderInterface;
-use ITEA\App\Metadata\Metadata;
+use ITEA\Serializer\App\Encoder\EncoderInterface;
+use ITEA\Serializer\App\Metadata\Metadata;
 
-class Serialized
+class Serializer
 {
     /**
      * @var mixed;
@@ -17,14 +17,12 @@ class Serialized
      * @var EncoderInterface;
      *
      */
-
-    private $encoders;
+    private $encoder;
 
     /**
      * @param array|object $data
      * @param EncoderInterface  $encoders
      */
-
     public function __construct($data, $encoders)
     {
 
@@ -38,23 +36,22 @@ class Serialized
         }
 
         $this->data = $this->getArrays($data);
-        $this->encoders = $encoders;
+        $this->encoder = $encoders;
     }
 
     public function serialize()
     {
-        return $this->encoders->encode($this->data);
+        return $this->encoder->encode($this->data);
     }
 
     /**
      * @return  array
      */
-
     private function getArrays($data)
     {
         if(is_object($data)) {
             $classMetadata = new Metadata($data);
-            $data = $classMetadata->getSerealizeObject();
+            $data = $classMetadata->getData();
         }
         return $data;
     }

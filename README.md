@@ -3,7 +3,6 @@ Library Serializer
 
 With the Serializer library it's possible to handle serializing data structures, including object graphs, into array structures
 
-
 Installation
 ------------
 
@@ -25,8 +24,10 @@ Usage
 Exemple
 ----------------
 
-```
-./src/Person.php
+./test/Person.php
+
+```php
+<?php
 
 class Person
 {
@@ -71,29 +72,33 @@ class Person
     }
 }
 ```
+* For serializer object or array yaml format use component 
+[symfony/yaml](https://github.com/symfony/yaml)
+
 In file ./bin/console.php
-```
+
+```php
 #!/usr/bin/env php
 <?php
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use ITEA\App\Person;
-use ITEA\App\Serialized\Serialized;
-use ITEA\App\Encoder\JsonEncoder;
-use ITEA\App\Encoder\YamlEncoder;
+use ITEA\Serializer\tests\Person;
+use ITEA\Serializer\Serializer;
+use ITEA\Serializer\App\Encoder\JsonEncoder;
+use Symfony\Component\Yaml\Yaml;
 
 $person = new Person('Marina', 'Bulick');
 $person->setAge(30);
 
 
-$serialized = new Serialized($person, new YamlEncoder());
-$serialized->serialize();
-//"{"firstName":"Marina","lastName":"Bulick","age":30}"
+$serialized = Yaml::dump($person, 2, 4, Yaml::DUMP_OBJECT);
+
+//!php/object "O:28:\"ITEA\\Serializer\\tests\\Person\":3:{s:39:\"\0ITEA\\Serializer\\tests\\Person\0firstName\";s:6:\"Marina\";s:38:\"\0ITEA\\Serializer\\tests\\Person\0lastName\";s:6:\"Bulick\";s:33:\"\0ITEA\\Serializer\\tests\\Person\0age\";i:30;}"
 
 
 
-$serialized = new Serialized($person, new JsonEncoder());
+$serialized = new Serializer($person, new JsonEncoder());
 $serialized->serialize();
 /*"---
 firstName: Marina
@@ -102,5 +107,6 @@ age: 30
 ...
 "
  */
+
 ```
 

@@ -6,7 +6,7 @@
  * Time: 16:03
  */
 
-namespace ITEA\App\Encoder;
+namespace ITEA\Serializer\App\Encoder;
 
 class JsonEncoder implements EncoderInterface
 {
@@ -20,6 +20,10 @@ class JsonEncoder implements EncoderInterface
      */
     public function encode(array $data = [])
     {
+        if(!(is_array($data) || is_object($data))) {
+            throw new \InvalidArgumentException(\sprintf('This argument "%s" must be have type Array or Object.', $data));
+        }
+
         return json_encode($data);
     }
 }
