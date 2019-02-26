@@ -2,8 +2,8 @@
 
 namespace ITEA\Serializer;
 
-use ITEA\Serializer\App\Encoder\EncoderInterface;
-use ITEA\Serializer\App\Metadata\Metadata;
+use ITEA\Serializer\Encoder\EncoderInterface;
+use ITEA\Serializer\Metadata\Metadata;
 
 class Serializer
 {

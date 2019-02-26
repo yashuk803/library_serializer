@@ -1,5 +1,6 @@
 <?php
-namespace ITEA\Serializer\App\Exception;
+
+namespace ITEA\Serializer\Exception;
 
 class InvalidAgeOfPersonException extends \DomainException
 {

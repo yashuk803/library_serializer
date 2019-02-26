@@ -1,7 +1,7 @@
 <?php
-namespace ITEA\Serializer\tests;
+namespace ITEA\Serializer\Test;
 
-use ITEA\Serializer\App\Exception\InvalidAgeOfPersonException;
+use ITEA\Serializer\Exception\InvalidAgeOfPersonException;
 
 class Person
 {

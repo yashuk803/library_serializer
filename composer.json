@@ -1,5 +1,5 @@
 {
-  "name": "greeflas/default-project",
+  "name": "ITEA/Serializer",
   "type": "library",
   "description": "This is a easy library serializer",
   "keywords": ["json_encode", "yaml"],
@@ -21,8 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "ITEA\\Serializer\\": "",
-      "ITEA\\Serializer\\App\\": "src/"
+      "ITEA\\Serializer\\": "src/"
     }
   },
   "autoload-dev": {

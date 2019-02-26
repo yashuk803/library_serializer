@@ -1,5 +1,6 @@
 <?php
-namespace ITEA\Serializer\App\Metadata;
+
+namespace ITEA\Serializer\Metadata;
 
 class Metadata
 {

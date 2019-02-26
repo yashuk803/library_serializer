@@ -1,12 +1,8 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: masha
- * Date: 23.02.19
- * Time: 16:03
- */
 
-namespace ITEA\Serializer\App\Encoder;
+namespace ITEA\Serializer\Encoder;
+
+use ITEA\Serializer\Exception\EncryptException;
 
 class JsonEncoder implements EncoderInterface
 {
@@ -20,10 +16,11 @@ class JsonEncoder implements EncoderInterface
      */
     public function encode(array $data = [])
     {
-        if(!(is_array($data) || is_object($data))) {
-            throw new \InvalidArgumentException(\sprintf('This argument "%s" must be have type Array or Object.', $data));
-        }
+        $json = json_encode($data);
 
-        return json_encode($data);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            throw new EncryptException('Could not encrypt the data.');
+        }
+        return $json;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace ITEA\Serializer\App\Encoder;
+namespace ITEA\Serializer\Encoder;
 
 interface EncoderInterface {
 
