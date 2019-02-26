@@ -1,6 +1,6 @@
 <?php
 
-namespace ITEA\Serializer\Metadata;
+namespace Yashuk803\Serializer\Metadata;
 
 class Metadata
 {

@@ -1,8 +1,7 @@
 <?php
 
-namespace ITEA\Serializer\App\Encoder;
+namespace Yashuk803\Serializer\Encoder;
 
-use ITEA\Serializer\Encoder\EncoderInterface;
 use Symfony\Component\Yaml\Yaml;
 
 class YamlEncoder implements EncoderInterface

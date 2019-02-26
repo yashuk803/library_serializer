@@ -1,8 +1,8 @@
 <?php
 
-namespace ITEA\Serializer\Encoder;
+namespace Yashuk803\Serializer\Encoder;
 
-use ITEA\Serializer\Exception\EncryptException;
+use Yashuk803\Serializer\Exception\EncryptException;
 
 class JsonEncoder implements EncoderInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace ITEA\Serializer;
+namespace Yashuk803\Serializer;
 
-use ITEA\Serializer\Encoder\EncoderInterface;
-use ITEA\Serializer\Metadata\Metadata;
+use Yashuk803\Serializer\Encoder\EncoderInterface;
+use Yashuk803\Serializer\Metadata\Metadata;
 
 class Serializer
 {

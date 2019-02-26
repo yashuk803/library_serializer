@@ -3,10 +3,10 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use ITEA\Serializer\Test\Person;
-use ITEA\Serializer\Serializer;
-use ITEA\Serializer\Encoder\JsonEncoder;
-use ITEA\Serializer\App\Encoder\YamlEncoder;
+use Yashuk803\Serializer\Test\Person;
+use Yashuk803\Serializer\Serializer;
+use Yashuk803\Serializer\Encoder\JsonEncoder;
+use Yashuk803\Serializer\Encoder\YamlEncoder;
 
 $person = new Person('Marina', 'Bulick');
 $person->setAge(30);

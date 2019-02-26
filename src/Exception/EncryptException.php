@@ -1,6 +1,6 @@
 <?php
 
-namespace ITEA\Serializer\Exception;
+namespace Yashuk803\Serializer\Exception;
 
 
 class EncryptException extends \RuntimeException

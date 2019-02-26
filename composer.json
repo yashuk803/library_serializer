@@ -1,9 +1,9 @@
 {
-  "name": "ITEA/Serializer",
+  "name": "yashuk803/serializer",
   "type": "library",
   "description": "This is a easy library serializer",
   "keywords": ["json_encode", "yaml"],
-  "license": "ITEA",
+  "license": "Yashuk803",
   "authors": [
     {
       "name": "Mariia Tarantsova",
@@ -21,12 +21,12 @@
   },
   "autoload": {
     "psr-4": {
-      "ITEA\\Serializer\\": "src/"
+      "Yashuk803\\Serializer\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "ITEA\\Serializer\\Test\\": "tests/"
+      "Yashuk803\\Serializer\\Test\\": "tests/"
     }
   }
 }
