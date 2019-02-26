@@ -92,20 +92,18 @@ $person = new Person('Marina', 'Bulick');
 $person->setAge(30);
 
 
+
 $serialized = new Serializer($person, new YamlEncoder());
 $serialized->serialize();
-//!php/object "O:28:\"ITEA\\Serializer\\tests\\Person\":3:{s:39:\"\0ITEA\\Serializer\\tests\\Person\0firstName\";s:6:\"Marina\";s:38:\"\0ITEA\\Serializer\\tests\\Person\0lastName\";s:6:\"Bulick\";s:33:\"\0ITEA\\Serializer\\tests\\Person\0age\";i:30;}"
-
-
-
-$serialized = new Serializer($person, new JsonEncoder());
-$serialized->serialize();
-/*"---
+/*
 firstName: Marina
 lastName: Bulick
 age: 30
-...
-"
- */
+*/
+
+$serialized = new Serializer($person, new JsonEncoder());
+$serialized->serialize();
+/*{"firstName":"Marina","lastName":"Bulick","age":30}*/
+
 ```
 
