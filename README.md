@@ -83,17 +83,17 @@ In file ./bin/console.php
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use ITEA\Serializer\tests\Person;
-use ITEA\Serializer\Serializer;
-use ITEA\Serializer\App\Encoder\JsonEncoder;
-use Symfony\Component\Yaml\Yaml;
+use Yashuk803\Serializer\Test\Person;
+use Yashuk803\Serializer\Serializer;
+use Yashuk803\Serializer\Encoder\JsonEncoder;
+use Yashuk803\Serializer\Encoder\YamlEncoder;
 
 $person = new Person('Marina', 'Bulick');
 $person->setAge(30);
 
 
-$serialized = Yaml::dump($person, 2, 4, Yaml::DUMP_OBJECT);
-
+$serialized = new Serializer($person, new YamlEncoder());
+$serialized->serialize();
 //!php/object "O:28:\"ITEA\\Serializer\\tests\\Person\":3:{s:39:\"\0ITEA\\Serializer\\tests\\Person\0firstName\";s:6:\"Marina\";s:38:\"\0ITEA\\Serializer\\tests\\Person\0lastName\";s:6:\"Bulick\";s:33:\"\0ITEA\\Serializer\\tests\\Person\0age\";i:30;}"
 
 
@@ -107,6 +107,5 @@ age: 30
 ...
 "
  */
-
 ```
 
