@@ -3,7 +3,7 @@
   "type": "library",
   "description": "This is a easy library serializer",
   "keywords": ["json_encode", "yaml"],
-  "license": "Yashuk803",
+  "license": "BSD-3-Clause",
   "authors": [
     {
       "name": "Mariia Tarantsova",
